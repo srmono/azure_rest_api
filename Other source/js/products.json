@@ -1,0 +1,20 @@
+[
+	{
+		"img": "headphone.jpg",
+		"name": "headphone",
+		"offer": 50,
+		"brand": "jbl"
+	},
+	{
+		"img": "headphone.jpg",
+		"name": "shirt",
+		"offer": 500,
+		"brand": "LP"
+	},
+	{
+		"img": "headphone.jpg",
+		"name": "Shoe",
+		"offer": 5000,
+		"brand": "Lee" 
+  }
+]

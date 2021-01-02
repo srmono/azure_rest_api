@@ -1,0 +1,31 @@
+#products {
+
+}
+#topdeals .prod, #products .prod{
+	text-align: center;
+	float: left;
+	width: 180px;
+	border: 1px solid red;
+	padding: 15px;
+	margin-right: 5px;
+}
+
+#products .img, #topdeals .img{
+
+}
+#products .title, #topdeals .title{
+	padding: 5px;
+	color: limegreen;
+}
+#products .cat, #topdeals .cat{
+	padding: 5px;
+	color: grey;
+}
+#products .price, #topdeals .price{
+	padding: 5px;
+	color: tomato;
+}
+
+.clear{
+	clear: both;
+}

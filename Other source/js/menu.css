@@ -1,0 +1,33 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+#navigation{
+
+}
+#navigation .menu{
+	list-style: none;
+	background: tomato;
+}
+#navigation .menu li{
+	display: inline;
+}
+
+#navigation .menu li a{
+	display: inline-block;
+	padding: 15px 25px;
+	text-decoration: none;
+	color: gold;
+	text-transform: uppercase;
+}
+#navigation .menu li a:hover{
+	background: salmon;
+}
+
+
+
+
+
+
+
