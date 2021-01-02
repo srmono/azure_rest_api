@@ -1,0 +1,179 @@
+swagger: "2.0"
+info: 
+  version: "0.0.1"
+  title:  UST TRAINING API
+  description: This specification is fro the UST Training Portal. Here you can find information about UST Trainings and openings
+  
+  contact:
+    name: UST 
+    url: https://www.ust-global.com
+    email: admin@ust-global.com
+    
+  license:
+    name: GNU
+    url: https://www.ust-global.com
+    
+host: localhost:3000
+basePath: /v1/
+schemes:
+  - http
+  - https
+
+consumes:
+  - application/json
+#format of the responses to hte client
+produces:
+  - application/json
+
+tags:
+  - name: Trainings
+    description: Refer to trainings that are offered by UST
+  
+  - name: Jobs
+    description: Refer to trainings that are offered by UST
+  
+  - name: Services
+    description: Refer to trainings that are offered by UST
+
+externalDocs:
+  description: This is an external doc
+  url: https://www.developer.ust-global.com/docs
+  
+
+#this is where the resouse paths are defined
+paths:
+  #api name ustapi
+  /usttrainings:
+    get:
+      summary: This is a get api for trainings list
+      description: In this page you can find list of trainings and jobs proided by ust
+      security:
+        #array elements needed only in case of oauth
+        - KeySecurity: []
+        
+      tags:
+        - Trainings
+        - Jobs
+      
+      #parameres: There ar eno parameters for this operation
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: "#/definitions/Trainings"
+        "400":
+          description: When a training is not found
+          schema:
+            $ref: "#/definitions/Trainings"
+        
+        default:
+          description: Error
+          schema: 
+            $ref: "#/definitions/GeneralError"
+        
+
+#Definitions
+definitions:
+  GeneralError:
+    required:
+      - message
+    properties:
+      message:
+        type: string
+  
+  #Not Found Error
+  NotFoundError:
+    required:
+      - message
+      - hint
+    properties:
+      message:
+        type: string
+      hint:
+        type: string
+    
+  #trainings
+  Trainings:
+    required:
+      - name
+      - description
+      - type
+      - numberOfDays
+    properties:
+      name:
+        type: string
+      description:
+        type: string
+      type:
+        type: string
+        enum: 
+          - database
+          - api training
+  
+  # collection of trainings by location
+  deliverables:
+    type: array
+    items: 
+      $ref: "#/definitions/Location"
+   
+  # training schema - Not all fields included
+  # Students may take it as an exercise
+  Location:
+    required:
+      - type
+      - role
+    properties:
+      type:
+        type: string
+      role:
+        type: string 
+        
+#parameter Definitions
+# common paramers used int he operation
+parameters:
+  IdInPath:
+    name: id
+    in: path
+    type: string
+    required: true
+
+#security definitions
+securityDefinitions:
+  keySecurity:
+    type: apiKey
+    in: query
+    name: api_key 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
